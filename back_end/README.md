@@ -24,7 +24,7 @@ This is the backend API for a Product Management application built with Node.js,
    Ensure your `.env` file is set up with your MongoDB connection string and JWT Secrets:
    ```env
    PORT=5000
-   MONGO_URI=mongodb://127.0.0.1:27017/product_management
+   MONGO_URI=mongodb+srv://jaseelkp927:KAFh1X73DhfMILKg@cluster0.6nvmjyz.mongodb.net/product_management
    JWT_SECRET=seclob
    NODE_ENV=development
    ```
