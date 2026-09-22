@@ -101,7 +101,7 @@ const SingleProduct = () => {
     return {
       title: product?.title || "",
       description: product?.description || "",
-      subcategory: product?.subcategory || "",
+      subcategory: product?.subcategory?._id || product?.subcategory || "",
       variants: product?.variants?.length > 0 
         ? product.variants.map(v => ({ ram: v.ram || "", storage: v.storage || "", price: v.price || "", qty: v.qty || "" }))
         : [{ ram: "", storage: "", price: "", qty: "" }],

@@ -27,6 +27,9 @@ This is the backend API for a Product Management application built with Node.js,
    MONGO_URI=mongodb+srv://jaseelkp927:KAFh1X73DhfMILKg@cluster0.6nvmjyz.mongodb.net/product_management
    JWT_SECRET=seclob
    NODE_ENV=development
+   CLOUDINARY_CLOUD_NAME=your_cloud_name
+   CLOUDINARY_API_KEY=your_api_key
+   CLOUDINARY_API_SECRET=your_api_secret
    ```
 
 3. **Run the Server:**

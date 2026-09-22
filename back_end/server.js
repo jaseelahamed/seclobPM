@@ -12,7 +12,6 @@ app.use(express.json());
 app.use(cors()); 
 app.use(cookieParser());
 
-app.use("/uploads", express.static(path.join(__dirname, "/uploads")));
 
 app.use("/api/auth", require("./routes/authRoutes"));
 
@@ -21,6 +20,15 @@ app.use("/api/subcategories", require("./routes/subCategoryRoutes"));
 app.use("/api/products", require("./routes/productRoutes"));
 app.use("/api/wishlist", require("./routes/wishlistRoutes"));
 app.use("/api/upload", require("./controllers/uploadController"));
+
+
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(500).json({
+    success: false,
+    message: err.message || "Internal Server Error",
+  });
+});
 
 const PORT = process.env.PORT || 5000;
 
