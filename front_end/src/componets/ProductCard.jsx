@@ -6,6 +6,7 @@ import { PATHS } from "../constants/paths";
 import { useWishlist } from "../hooks/useWishlist"; 
 import { toast } from "react-hot-toast";
 import "../pages/Dashboard/dashboard.scss";
+import { Base_Url } from "../services/base_url";
 
 const ProductCard = ({ product }) => {
   const navigate = useNavigate();
@@ -33,7 +34,7 @@ const ProductCard = ({ product }) => {
     <div className="product-card" onClick={handleClick}>
       <div className="card-image-wrapper">
         <img
-          src={`http://localhost:5000${product.images[0]?.replace('/api', '')}`}
+          src={`${Base_Url.replace('/api', '')}${product.images[0]?.replace('/api', '')}`}
           alt={product.title}
         />
         <button

@@ -6,9 +6,9 @@ const CategoryFormModal = ({
   validationSchema,
   onSubmit,
   onCancel,
-  modalType, // you can optionally pass modalType for conditional rendering outside component
+  modalType, 
 }) => {
-  if (modalType !== "category") return null; // Only render if modalType is "category"
+  if (modalType !== "category") return null; 
 
   return (
     <Formik
