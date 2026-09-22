@@ -218,6 +218,7 @@ const Dashboard = () => {
       arrowdownIcon={arrowdownIcon}
           arrowdownIcon2={arrowdownIcon2}
           setFilters={setFilters}
+          loading={loading}
     />
         
       </div>

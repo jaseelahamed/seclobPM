@@ -12,7 +12,8 @@ const CategoryFilter = ({
   products = [],
   arrowdownIcon,
   arrowdownIcon2,
-  setFilters
+  setFilters,
+  loading
 }) => {
   return (
     <div className="row" style={{ display: "flex", flexWrap: "wrap", alignItems: "flex-start" }}>
@@ -81,16 +82,33 @@ const CategoryFilter = ({
    
       <div className="col-12 col-lg-9 col-md-8">
         <div className="row">
-          {products?.map((prod, index) => (
-            <div key={index} className="col-6 col-lg-4 mb-4">
-              <ProductCard product={prod} />
-            </div>
-          ))}
+          {loading ? (
+            Array.from({ length: 6 }).map((_, idx) => (
+              <div key={idx} className="col-6 col-lg-4 mb-4">
+                <div className="product-card skeleton">
+                  <div className="card-image-wrapper skeleton-img"></div>
+                  <div className="card-details">
+                    <div className="skeleton-text title"></div>
+                    <div className="skeleton-text price"></div>
+                    <div className="skeleton-text stars"></div>
+                  </div>
+                </div>
+              </div>
+            ))
+          ) : (
+            <>
+              {products?.map((prod, index) => (
+                <div key={index} className="col-6 col-lg-4 mb-4">
+                  <ProductCard product={prod} />
+                </div>
+              ))}
 
-          {products?.length === 0 && (
-            <div className="col-12">
-              <p>No products found for the selected category/subcategory.</p>
-            </div>
+              {products?.length === 0 && (
+                <div className="col-12">
+                  <p>No products found for the selected category/subcategory.</p>
+                </div>
+              )}
+            </>
           )}
         </div>
       </div>

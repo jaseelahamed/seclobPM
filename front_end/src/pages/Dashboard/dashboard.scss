@@ -648,3 +648,52 @@ html {
     }
   }
 }
+
+/* Skeleton Loader */
+@keyframes skeleton-loading {
+  0% {
+    background-color: #e0e0e0;
+  }
+  100% {
+    background-color: #f0f0f0;
+  }
+}
+
+.product-card.skeleton {
+  cursor: default;
+  &:hover {
+    transform: none;
+    box-shadow: none;
+  }
+
+  .skeleton-img {
+    height: 6rem;
+    width: 100%;
+    animation: skeleton-loading 1s linear infinite alternate;
+    border-bottom: none;
+    @media (min-width: 768px) {
+      height: 10rem;
+    }
+  }
+
+  .skeleton-text {
+    animation: skeleton-loading 1s linear infinite alternate;
+    border-radius: 4px;
+    margin-bottom: 0.5rem;
+
+    &.title {
+      height: 1rem;
+      width: 70%;
+    }
+    
+    &.price {
+      height: 1rem;
+      width: 40%;
+    }
+
+    &.stars {
+      height: 0.8rem;
+      width: 30%;
+    }
+  }
+}
