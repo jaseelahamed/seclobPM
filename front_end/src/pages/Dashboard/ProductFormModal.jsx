@@ -249,11 +249,7 @@ const ProductFormModal = ({
                     <React.Fragment key={idx}>
                       {url ? (
                         <img
-                          src={
-                            typeof url === "string" && url.startsWith("http")
-                              ? url.replace("/api", "")
-                              : `${Base_Url.replace("/api", "")}${url.replace("/api", "")}`
-                          }
+                          src={url}
                           alt={`preview-${idx + 1}`}
                           className="image-preview"
                           onClick={() => {

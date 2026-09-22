@@ -36,14 +36,11 @@ const WishlistSidebar = ({ show, onClose }) => {
           <p className="empty-state">No products in wishlist.</p>
         ) : (
           wishlist.products.map((product) => {
-            const serverUrl = Base_Url.replace('/api', '');
-            const cleanImgPath = product.images?.[0]?.replace('/api', '') || '';
-            
             return (
               <div key={product._id} className="wishlist-item">
                 <div className="item-image">
                   <img
-                    src={`${serverUrl}${cleanImgPath}`}
+                    src={product.images?.[0]}
                     alt={product.title}
                   />
                 </div>

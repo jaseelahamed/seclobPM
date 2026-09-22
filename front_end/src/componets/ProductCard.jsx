@@ -34,7 +34,7 @@ const ProductCard = ({ product }) => {
     <div className="product-card" onClick={handleClick}>
       <div className="card-image-wrapper">
         <img
-          src={`${Base_Url.replace('/api', '')}${product.images[0]?.replace('/api', '')}`}
+          src={product.images[0]}
           alt={product.title}
         />
         <button

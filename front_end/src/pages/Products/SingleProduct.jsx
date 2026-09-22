@@ -77,9 +77,7 @@ const SingleProduct = () => {
 
   React.useEffect(() => {
     if (product?.images?.length > 0) {
-      const serverUrl = Base_Url.replace('/api', '');
-      const cleanImgPath = product.images[0].replace('/api', '');
-      setMainImage(`${serverUrl}${cleanImgPath}`);
+      setMainImage(product.images[0]);
     }
     if (product?.variants?.length > 0) {
       setSelectedVariantId(product.variants[0]._id);
@@ -123,10 +121,7 @@ const SingleProduct = () => {
           </div>
 
           <div className="thumbnail-row">
-            {product?.images?.slice(0, 3).map((img, index) => {
-              const serverUrl = Base_Url.replace('/api', '');
-              const cleanImgPath = img.replace('/api', '');
-              const imgUrl = `${serverUrl}${cleanImgPath}`;
+            {product?.images?.slice(0, 3).map((imgUrl, index) => {
               return (
                 <div 
                   key={index} 
